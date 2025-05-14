@@ -95,7 +95,7 @@ class Calculator {
     }
 }
 
-// DOM Elements
+
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-action]');
 const equalsButton = document.querySelector('[data-action="calculate"]');
@@ -106,16 +106,16 @@ const currentOperandElement = document.querySelector('.current-operand');
 const darkModeToggle = document.getElementById('dark-mode');
 const calculatorEl = document.querySelector('.calculator');
 
-// Calculator instance
+
 const calculator = new Calculator(previousOperandElement, currentOperandElement);
 
-// Dark mode toggle
+
 darkModeToggle.addEventListener('change', () => {
     document.body.setAttribute('data-theme', 
         darkModeToggle.checked ? 'dark' : 'light');
 });
 
-// Calculator button event listeners
+
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText);
@@ -147,7 +147,7 @@ deleteButton.addEventListener('click', () => {
     calculator.updateDisplay();
 });
 
-// Keyboard support
+
 document.addEventListener('keydown', (e) => {
     if (e.key >= '0' && e.key <= '9') {
         calculator.appendNumber(e.key);
